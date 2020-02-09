@@ -1,0 +1,12 @@
+<div (contextmenu)='handleRightClick($event)'>
+    <h1>{{ companyName }}</h1>
+    <!-- <h1 [innerText]='companyName'></h1> -->
+
+    <!-- <img src="{{logoImageUrl}}" alt=""> -->
+    <img [src]="logoImageUrl" alt="">
+    <br /><br />
+    <button (click)='handleShowClick($event)' class="btn btn-primary">
+        Show
+    </button>
+
+</div>

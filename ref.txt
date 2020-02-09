@@ -1,2 +1,332 @@
 9FEB - Day1
 ----------------------
+
+    front end / UI / Web development (client side)
+    ---------------------------------------------------
+    HTML
+        - 'what' content you want to place on your webpage
+        - to define 'structure' of your webpage
+
+    CSS
+        - 'how' the content should appear on the webpage    
+        - to define 'style rules' for webpage
+
+    JavaScript / ES5
+        - Scripting language
+        - it is interpreted language 
+            - every browser has a 'JS engine' which executes JS code
+                    chrome      = V8
+                    firefox     = spidermonkey
+                    IE          = chakra
+        - 1997, introducted 
+        - 1997, it was submitted to ECMA for standardization
+        - since then, ECMA keeps publishing diff 'specifications' which 
+                every browser has to implement 
+        - the implemenation by the browser is called 'ECMAScript'
+        -1997   ES1
+        -1998   ES2
+        -1999   ES3
+        -2009   ES5
+
+
+        - to provide functionalities on webpages 
+
+        - DOM manipulation
+        - Event handling
+        - Business logic 
+        - ajax calls / http calls
+        - form validations
+        ......
+
+    JQuery
+        - it is JS Library
+        - it is fast/light-weight/cross-browser/open source 
+        - it simplified JS tasks 
+
+
+    
+
+    Bootstrap / SemanticUI / Foundation ...
+        - HTML+CSS+JQuery
+        - to create 'responsive' webpages
+
+    ES6 - 2015 - (Modern JS)
+    ----------------------
+        - introducted many new features 
+        - arrow functions 
+        - let,const keywords 
+        - spread operators, rest parameters
+        - module system
+        - promises/async-await/generators 
+        - classes & objects
+        - .....
+
+
+    var, let & const keywords
+
+        1. var
+            - global/function scoped 
+
+        2. let
+            - block/function scoped 
+
+        3. const
+            - block/function scoped 
+            - cannot be reassigned 
+
+    arrow functions
+
+    spread operator 
+
+    rest parameter
+
+
+    typescript
+        - it is compiled language
+        - it cannot be executed inside browsers
+        - it is superset of ES6
+        - ++ some additional features
+            - type system
+            - decorators
+            - OOPS features
+            - generics
+            ......
+
+    Type system
+    ---------------------
+        number
+        string 
+        boolean 
+        any 
+        void 
+        never 
+
+        object & object type inference 
+
+        create a custom object type
+            1. using 'type' keyword 
+            2. using interface  
+            3. using class 
+
+
+    Javascript tools
+    -------------------------------------
+        1. transpilers
+                - Babel (convert moden js to legacy js)
+        2. bundlers 
+                - Webpack (bundles several files together)
+
+    Angular / React / Vue / Ember
+
+
+    Language            Library/apis/packages           Framework
+    C#/VB                                               .NET
+
+    Java                                                Spring
+
+    JavaScript          JQuery                          Angular
+
+        ||                  ||                          ||
+    programming         simplifies                  standardize
+    capabilities        tasks                       process
+
+
+
+
+
+
+
+    AngularJS/Angular1.x
+        - 2010
+        - javascript based 
+        - MVC architecture (model-view-controlller)
+        - uses 'controller' based architecture
+
+    Angular2
+        - May 2016
+        - complete rewrite of angularJS
+        - typescript 
+        - uses 'component based architecture'
+    
+    Angular 4
+        - Dec 2016
+        - faster compilation 
+        - some technical changes 
+        - HttpClient module
+    
+    Angular5
+        - Nov 2017
+        - service worker (offline browsing)
+        - build optimizer 
+        - compiler imporvements 
+        - 
+    Angular6
+        - May 2018
+        - rxjs 6 / some changes 
+        - angular elements 
+        - angular material 
+        - ...
+
+    Angular7
+        - Oct 2018
+        - CLI prompts 
+        - improved Angular Material & CDK
+            - Virtual Scrolling 
+            - Drag & Drop 
+        - 
+    Angular8
+        - May 2019
+
+
+Environment Setup for Angular Development 
+------------------------------------------------
+    1. download/install nodejs 
+        - it is used to perform some build operations for angular projects
+        - it comes with NPM (node package manager)
+
+        > node -v
+        > npm -v 
+
+    2. install angular-cli 
+        - it is a tool to create/build/test angular projects 
+
+        > npm install -g @angular/cli
+
+    3. install any editor 
+            - VS code
+            - atom
+            - brackets
+            - sublime 
+            - ... any editor 
+
+Create an Angular Project using CLI
+--------------------------------------
+    > ng new projectname
+
+
+
+Building Blocks of Angular appear
+
+1. Component 
+        - every angular app has at least one root component (AppComponent)
+        - a component is responsibe to render a 'template'
+        - it encapsulates data,logic and view 
+        - a typescript class {}
+
+2. Template 
+    - represents a 'view' using html
+
+3. Module 
+    - every angular app has atleast one root module (AppModule)
+    - module is used to register all the components,directives, pipes, services, etc.
+
+4. directives
+5. pipes
+6. services 
+....
+
+
+Angular Project Directory structure
+-----------------------------------------
+    |
+    |-->e2e
+    |   |-> stores end to end test cases 
+    |
+    |-->node_modules
+    |   |-> stores all the dependencies
+    |
+    |-->src
+    |   |
+    |   |-->app
+    |   |   |->app.module.ts
+    |   |   |->app.component.ts
+    |   |   |->app.component.html
+    |   |   
+    |   |-->assets
+    |   |   |-> store all images/static files
+    |   |
+    |   |-->environments
+    |   |   |->environment.ts
+    |   |   |->environment.prod.ts
+    |   |
+    |   |-->index.html
+    |   |   |-> 1st file which get served
+    |   |
+    |   |-->main.ts
+    |   |   |-> entry point of your application
+    |   |
+    |   |-->styles.css
+    |   |   |-> global css file 
+    |
+    |-->package.json
+    |       |-> lists all the dependencies & define scripts
+    |       |-> defines some metadata of angular project
+    |
+    |-->tsconfig.json
+    |       |-> typescript related configuration
+    |
+    |-->angular.json
+    |       |-> angular project related configuration
+    |
+
+
+>ng serve 
+
+
+
+
+header.component.ts
+--------------------
+import {Compoment} from '@angular/core'
+
+@Component({
+    selector:'app-header',
+    tempalteUrl: './header.component.html',
+    styleUrls: []
+})
+export class HeaderComponent{
+
+}
+
+
+header.component.html
+---------------------------
+    //define html code
+
+header.component.css
+-------------------------
+    //define css rules 
+
+header.component.spec.ts
+    //define test cases 
+
+
+
+Create a new component
+------------------------------
+    > ng generate component Header 
+    > ng g c Header 
+
+Data Binding
+-----------------
+    1. string interpolation 
+            - output some text dynamically into headings, paragraphs, div 
+
+        {{ tsField }}
+
+    2. property binding 
+            - bind a value a tsField to certain domProperties 
+
+                <ele [domProperty]='tsField'></ele>
+
+    3. event binding 
+            - bind a handler/eventlistener to a domEvent 
+
+
+
+
+
+
+
+
+
