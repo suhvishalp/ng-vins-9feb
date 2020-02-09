@@ -1,5 +1,5 @@
 <div (contextmenu)='handleRightClick($event)'>
-    <h1>{{ companyName }}</h1>
+    <h1 [class.bordered]="isActive">{{ companyName }}</h1>
     <!-- <h1 [innerText]='companyName'></h1> -->
 
     <!-- <img src="{{logoImageUrl}}" alt=""> -->
@@ -8,5 +8,8 @@
     <button (click)='handleShowClick($event)' class="btn btn-primary">
         Show
     </button>
+
+    <br> 
+    <input type="text" [(ngModel)]='companyName' class="form-control">
 
 </div>

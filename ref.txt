@@ -30,21 +30,18 @@
 
 
         - to provide functionalities on webpages 
-
-        - DOM manipulation
-        - Event handling
-        - Business logic 
-        - ajax calls / http calls
-        - form validations
-        ......
+            - DOM manipulation
+            - Event handling
+            - Business logic 
+            - ajax calls / http calls
+            - form validations
+            ......
 
     JQuery
         - it is JS Library
         - it is fast/light-weight/cross-browser/open source 
         - it simplified JS tasks 
-
-
-    
+   
 
     Bootstrap / SemanticUI / Foundation ...
         - HTML+CSS+JQuery
@@ -274,7 +271,6 @@ Angular Project Directory structure
 
 
 
-
 header.component.ts
 --------------------
 import {Compoment} from '@angular/core'
@@ -322,7 +318,15 @@ Data Binding
     3. event binding 
             - bind a handler/eventlistener to a domEvent 
 
+    4. two way binding 
 
+            [(ngModel)]
+
+    5. Style binding 
+            <h1 [style.backgroundColor]='bgColor'>{{ companyName }}</h1>
+
+    6. class binding 
+            <h1 [class.bordered]="isActive">{{ companyName }}</h1>
 
 
 

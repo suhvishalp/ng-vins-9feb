@@ -9,6 +9,8 @@ export class HeaderComponent implements OnInit {
 
   public companyName: string;
   public logoImageUrl: string;
+  public bgColor: string = 'orange'
+  public isActive:boolean = false;
 
   constructor() { }
 
@@ -19,6 +21,7 @@ export class HeaderComponent implements OnInit {
 
     setTimeout(() => {
       this.companyName = 'Knowledge & Human Development Authority'
+      this.isActive = true;
     }, 6000);
   }
 
