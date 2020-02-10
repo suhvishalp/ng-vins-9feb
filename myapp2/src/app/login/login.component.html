@@ -1,0 +1,45 @@
+<div>
+    <h1>Login!...</h1>
+
+    <form #loginForm='ngForm' (ngSubmit)='login(loginForm)'>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" 
+                class="form-control" 
+                id="email"
+                #email='ngModel'
+                ngModel
+                email
+                name="email"
+                required
+                minlength="4">
+            
+            <div *ngIf='!email.valid && email.touched'>
+                <div *ngIf='email.errors.required' class="alert alert-danger">
+                    Email is Required...
+                </div>
+                <div *ngIf='email.errors.minlength' class="alert alert-danger">
+                    min {{email.errors.minlength.requiredLength}} characters are required...
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pwd">Password</label>
+          <input type="password" 
+                class="form-control" 
+                id="pwd"
+                ngModel
+                name="password"
+                required>
+        </div>
+        
+        <button 
+          
+            type="submit" 
+            class="btn btn-primary">Login</button>
+
+      </form>
+
+</div>
