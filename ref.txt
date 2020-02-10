@@ -340,6 +340,13 @@ directives
         - make changes in dom structure 
         - show/hide elements conditionally / iterate each item in array and repeat the element 
         *ngIf
+
+                <div *ngIf='true'> this is div </div>
+
+                <div *ngIf='x>=10'> this is div </div>
+
+                <div *ngIf='someFun()'> this is div </div>
+
         *ngFor
         *ngSwitchCase
     - component directives 
@@ -354,3 +361,66 @@ Custom directives
 
 
 
+
+pipes
+--------------------
+    - pipes are used to transform output in the template 
+
+    uppercase
+    lowercase
+    currency
+    number
+    date
+
+    
+
+    template string
+
+        function myfn(a, b, c, d){
+                
+                return `value of a = ${a} and value of b = ${b}`
+        
+        }
+
+         function myfn(a, b, c, d){
+                
+                return 'value of a =' + a + ' and value of b = '+ b'
+        
+        }
+
+Form handling
+-------------------------
+    - two approaches to handle forms in angular 
+    - @angular/forms library has below node_modules     
+            a. FormsModule
+            b. ReactiveFormsModlue
+    - these modules provide diff directives, classes, services  i.e. 
+
+        directives  
+            NgForm
+
+        Objects 
+
+            FormGroup 
+                - formgroup object represents value/validity status of a group of "formcontrol" ojects.
+                - value, valid, touched, untouched, controls, ......
+
+            FormControl 
+                - formcontrol object represents an individual form element i.e. text field/checkbox/radio/etc.
+
+            FormArray 
+
+        Services
+            FormBuilder
+
+    1. Template driven forms 
+            - the objects i.e. FormGroup, FormControl etc. are created implicitely 
+                just by adding few directives in template 
+            - good for simple forms with basic validations 
+            - easy to create 
+
+    2. Reactive forms 
+            - the objects i.e. FormGroup, FormControl etc. need to be create explicitely throgh code
+            - good for complex forms with custom validations 
+            - more testable 
+            - can have async validations 

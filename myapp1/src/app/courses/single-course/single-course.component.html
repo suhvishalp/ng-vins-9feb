@@ -1,7 +1,10 @@
 <div>
-    <h1>{{course.cName}}</h1>
+    <h1>{{course.cName | uppercase }}</h1>
     <p>Duration: {{ course.duration }}</p>
+    <p>Fees: {{ course.fees | currency:'AED' }} </p>
     <p>Trainer: {{  course.trainer }}</p>
+    <p [innerHTML]="course.desc | shorten"></p>
+    <p >Start Date: {{ course.startDate | date:'dd-MM-yyyy' }}</p>
     <button (click)='enrollCourse()' class="btn btn-primary">
         Enroll
     </button>

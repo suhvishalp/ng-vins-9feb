@@ -1,11 +1,14 @@
 <div>
+
+   
+
     <h1 [highlight]=" 'yellow' ">Courses Component..</h1>
 
     <p *ngIf="selectedCourse">Selected Course = {{ selectedCourse.cName }}</p>
     <hr />
 
     <div *ngIf='courses.length>0;else noCourses'>
-        <div class="course" *ngFor='let item of courses'>
+        <div class="course" *ngFor="let item of courses | trainerFilter:'Wakas'">
             <app-single-course 
                  (onSelectCourse)='handleCourseSelect($event)'
                  [course]='item'></app-single-course>

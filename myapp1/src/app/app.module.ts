@@ -6,8 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CoursesComponent } from './courses/courses.component';
 import {FormsModule} from '@angular/forms';
-import { SingleCourseComponent } from './courses/single-course/single-course.component'
+import { SingleCourseComponent } from './courses/single-course/single-course.component';
 import { HighLightDirective } from './mydirectives/highlight.directive';
+import { ShortenPipe } from './mypipes/shorten.pipe';
+import { TrainerFilterPipe } from './mypipes/trainer-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HighLightDirective } from './mydirectives/highlight.directive';
     NavbarComponent,
     CoursesComponent,
     SingleCourseComponent,
-    HighLightDirective
+    HighLightDirective,
+    ShortenPipe,
+    TrainerFilterPipe
   ],
   imports: [
     BrowserModule,
