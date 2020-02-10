@@ -328,6 +328,26 @@ Data Binding
     6. class binding 
             <h1 [class.bordered]="isActive">{{ companyName }}</h1>
 
+Day2
+---------------------------------
+directives
+------------------------
+    - attribute directives
+        - enhance an element 
+        [ngClass]
+        [ngStyle]
+    - structural directives
+        - make changes in dom structure 
+        - show/hide elements conditionally / iterate each item in array and repeat the element 
+        *ngIf
+        *ngFor
+        *ngSwitchCase
+    - component directives 
+            <app-header>
+            <app-courses>
+
+Custom directives
+-----------------------------
 
 
 

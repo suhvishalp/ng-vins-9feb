@@ -1,3 +1,32 @@
 <div>
-    <h1>Courses Component..</h1>
-</div>
+    <h1 [highlight]=" 'yellow' ">Courses Component..</h1>
+
+    <p *ngIf="selectedCourse">Selected Course = {{ selectedCourse.cName }}</p>
+    <hr />
+
+    <div *ngIf='courses.length>0;else noCourses'>
+        <div class="course" *ngFor='let item of courses'>
+            <app-single-course 
+                 (onSelectCourse)='handleCourseSelect($event)'
+                 [course]='item'></app-single-course>
+         </div>
+    </div>
+    
+    <ng-template #noCourses>
+        <h3>No courses yet!...</h3>
+    </ng-template>
+    
+    <!-- <table class="table">
+        <tr>
+            <th>Course</th>
+            <th>Duration</th>
+            <th>Trainer</th>
+        </tr>
+        <tr *ngFor='let item of courses'>
+            <td>{{item.cName}}</td>
+            <td>{{item.duration}}</td>
+            <td>{{item.trainer}}</td>
+        </tr>
+    </table> -->
+   
+
