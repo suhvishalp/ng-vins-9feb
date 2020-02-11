@@ -419,8 +419,61 @@ Form handling
             - good for simple forms with basic validations 
             - easy to create 
 
+
+            <form ngForm #loginform='ngForm' (ngSubmit)='login(loginform)'>
+                    <input ...... ngModel name='xxxx' #localRef='ngModel' />
+
     2. Reactive forms 
-            - the objects i.e. FormGroup, FormControl etc. need to be create explicitely throgh code
+            - the objects i.e. FormGroup, FormControl etc. need to be create explicitely through
+                 code in component 
             - good for complex forms with custom validations 
             - more testable 
             - can have async validations 
+
+    new FormControl(formState, 
+                    ValidatorFn| ValidatorFn[] | null,
+                    AsyncValidatorFn | AsyncValidatorFn[] | null )
+
+    new FormControl('', [Validators.required], )
+
+
+Routing
+-------------------
+    - @angular/router module is used to implement routing/navigation in angular apps 
+
+/           = HomeComponent 
+
+/login      = LoginComponent 
+
+/register   = RegisterComponent 
+
+/xxxxxxx   = XXXXComponent
+
+1. define routes 
+
+    import {Routes, RouterModule} from '@angular/router'
+
+    const appRoutes:Routes = [
+        {path:'', component:HomeComponent},
+        {path:'login', component:LoginComponent },
+        {path:'reigter', component:RegisterComponent}
+    ] 
+
+    @NgModule({
+        declarations: [...],
+        imports: [
+            ......,
+            RouterModule.forRoot(appRoutes)
+        ]
+    })
+
+2. define a place to load the componets via routing 
+        <router-outlet></router-outlet>
+
+3. provide links/buttons to navigate
+
+    <a href='/someurl'>somelinktext</a>
+
+    <a routerLink='/someurl'>somelinktext</a>
+
+    <a routerLink="['/register', 12,54]">somelinktext</a>
