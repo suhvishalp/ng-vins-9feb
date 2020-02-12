@@ -9,16 +9,19 @@ import { HomeComponent } from './home/home.component'
 import {Routes, RouterModule} from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MoviesComponent } from './movies/movies.component'
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { MovieFormComponent } from './movie-form/movie-form.component'
 import { MyHandler } from './services/myglobalerrorhanlder';
+import { MyInterceptor } from './services/httpInterceptor';
+import { LogoutComponent } from './logout/logout.component';
 
 const appRoutes:Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
   {path:'movies', component:MoviesComponent},
-  {path:'movies/:id', component: MovieFormComponent}
+  {path:'movies/:id', component: MovieFormComponent},
+  {path:'logout', component: LogoutComponent}
 ]
 
 @NgModule({
@@ -29,7 +32,8 @@ const appRoutes:Routes = [
     HomeComponent,
     NavbarComponent,
     MoviesComponent,
-    MovieFormComponent
+    MovieFormComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ const appRoutes:Routes = [
     HttpClientModule
   ],
   providers: [
-    {provide:ErrorHandler, useClass:MyHandler}
+    {provide:HTTP_INTERCEPTORS, useClass:MyInterceptor, multi:true}
   ],
   bootstrap: [AppComponent]
 })

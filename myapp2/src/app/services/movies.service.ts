@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Injectable, ErrorHandler } from '@angular/core';
+import { HttpClient, HttpErrorResponse, HttpHandler } from '@angular/common/http';
 import {environment} from '../../environments/environment'
 import { Movie } from '../models/movie.mode';
 import {catchError} from 'rxjs/operators';
@@ -17,11 +17,34 @@ export class MovieService{
 
     public getAllMovies(){
       return  this.http.get<Movie[]>(this.moviesUrl)
+                    // .pipe(
+                    //     catchError(this.handleError)
+                    // )
     }
 
     public saveMovie(movie){
+        
         return this.http.post<Movie>(this.moviesUrl, movie)
+                    // .pipe(
+                    //     catchError(this.handleError)
+                    // )
     }
 
+    public getMovie(id){
+        return this.http.get<Movie>(this.moviesUrl + '/' + id)
+    }
+
+    handleError(error:HttpErrorResponse){
+        let message = '';
+        if(error.error instanceof ErrorEvent){
+            //client error 
+            message = error.error.message;
+        }else{
+            //server error
+            message = `Error Code: ${error.status}\nMessage: ${error.message}`;
+            //log the errors 
+        }
+        return throwError(message)
+    }
     
 }

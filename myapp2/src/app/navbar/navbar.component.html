@@ -9,14 +9,17 @@
             <li class="nav-item active">
                 <a class="nav-link" routerLink="/">Home</a>
             </li>
-            <li class="nav-item">
+            <li *ngIf="!userService.isLoggedIn()"  class="nav-item">
                 <a class="nav-link" routerLink="/login">Login</a>
             </li>
-            <li class="nav-item">
+            <li *ngIf="!userService.isLoggedIn()" class="nav-item">
                 <a class="nav-link" routerLink="/register">Register</a>
             </li>
-            <li class="nav-item">
+            <li *ngIf="userService.isLoggedIn()" class="nav-item">
                 <a class="nav-link" routerLink="/movies">Movies</a>
+            </li>
+            <li *ngIf="userService.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/logout">Logout</a>
             </li>
         </ul>
     </div>

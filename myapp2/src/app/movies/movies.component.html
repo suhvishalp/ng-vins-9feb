@@ -15,7 +15,11 @@
             <th></th>
         </tr>
         <tr *ngFor="let movie of movieData">
-            <td>{{movie.title}}</td>
+            <td>
+                <a [routerLink]="['/movies', movie._id]">
+                    {{movie.title}}
+                </a>
+            </td>
             <td>{{movie.genre.name}}</td>
             <td>{{movie.numberInStock}}</td>
             <td>{{movie.dailyRentalRate}}</td>

@@ -1,7 +1,7 @@
-import { ErrorHandler, Injectable } from '@angular/core';
+import { ErrorHandler } from '@angular/core';
 import { throwError } from 'rxjs';
 
-@Injectable()
+
 export class MyHandler implements ErrorHandler{
 
     handleError(error: any): void {
@@ -14,6 +14,7 @@ export class MyHandler implements ErrorHandler{
             }else{
               alert('Something went wrong..Server Error')
               //log the error using logger
+              throw error;
             }
     }
 }

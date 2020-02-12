@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors, FormBuilder } from '@angular/forms';
 import { CustomValidators } from '../myValidators/customvalidators';
-
+import {UserService} from '../services/user-service.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -23,7 +24,9 @@ export class RegisterComponent implements OnInit {
     return this.userForm.get('name')
   }
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, 
+    private userService:UserService,
+    private router:Router) { }
 
   ngOnInit(): void {
 
@@ -45,8 +48,20 @@ export class RegisterComponent implements OnInit {
   
 
   handleRegister(){
-    console.log('Submit is clicked')
-    console.log(this.userForm)
+    //console.log('Submit is clicked')
+    //console.log(this.userForm)
+    this.userService.registerUser(this.userForm.value)
+        .subscribe(
+          (response)=>{
+            console.log(response)
+            console.log(response.headers.get('x-auth-token'))
+            localStorage.setItem('token', response.headers.get('x-auth-token') )
+            this.router.navigate(['/'])
+          },
+          (error)=>{
+            console.log(error)
+          }
+        )
   }
 
 }
