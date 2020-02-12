@@ -1,1 +1,30 @@
-<p>movies works!</p>
+<div>
+    <h1 #myHead>Movies....</h1>
+    <p>Showing {{ movieData.length }} movies from database...</p>
+    <button (click)="handleNewMovie()" class="btn btn-primary">
+        New Movie!
+    </button>
+    <hr>
+
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Stock</th>
+            <th>Rate</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let movie of movieData">
+            <td>{{movie.title}}</td>
+            <td>{{movie.genre.name}}</td>
+            <td>{{movie.numberInStock}}</td>
+            <td>{{movie.dailyRentalRate}}</td>
+            <td>
+                <button class="btn btn-danger btn-xm">
+                    Remove
+                </button>
+            </td>
+        </tr>
+    </table>
+
+</div>

@@ -1,0 +1,38 @@
+<div>
+    <h1>MovieForm</h1>
+    <hr>
+
+    <form (ngSubmit)="handleSave()" [formGroup]='movieForm'>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" class="form-control" formControlName='title'>
+        </div>
+
+        <div class="form-group">
+            <label for="stock">Number in Stock</label>
+            <input type="text" id='stock' class="form-control" formControlName='numberInStock'>
+        </div>
+
+        <div class="form-group">
+            <label for="rate">Rate</label>
+            <input type="text" id="rate" class="form-control" formControlName='dailyRentalRate'>
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Select Genre</label>
+            <select id="genre" class="form-control" formControlName='genreId'>
+                <option value="-1">Select...</option>
+                <option *ngFor="let genre of genres" [value]="genre._id">
+                    {{ genre.name }}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                Save
+            </button></div>
+    </form>
+
+</div>
