@@ -477,3 +477,67 @@ Routing
     <a routerLink='/someurl'>somelinktext</a>
 
     <a routerLink="['/register', 12,54]">somelinktext</a>
+
+
+    vidly-api-node
+    ---------------------
+
+        movies
+        -------------
+            GET     http://localhost:3900/api/movies
+                        - return all the movies from the db
+
+            GET     http://localhost:3900/api/movies/movieid
+                        - return a movie with given id
+
+            DELETE  http://localhost:3900/api/movies/movieid
+                        - remove a movie with given id 
+
+            POST  http://localhost:3900/api/movies
+                        - provide appropriate json data along with request body
+                        - add / insert a new movie in db
+            
+            PUT  http://localhost:3900/api/movies/movieid
+                        - provide appropriate json data along with request body
+                        - updates the movie with given data
+        genres
+        -------------
+            GET     http://localhost:3900/api/genres
+
+            ...
+            ...
+
+HTTP calls/ ajax calls 
+==============================
+
+1. import 'HttpClientModule' in our appmodule
+        @angular/common/http package provides a module called 'HttpClientModule'
+
+2. inject 'HttpClient' service wherever you to communicate to server/backend 
+
+3. use appropriate methods of HttpClient service to make http calls/requests 
+
+        http.get()
+            -> constructs a GET request and returns Observable
+
+
+
+Dependency Injection
+-----------------------------
+** you can specifiy "Providers" for services to be injected 
+
+    root                - only one single instance is used accross the application...
+
+    AppComponent        - only the children of appcomponent will have the same instance of the service 
+
+    Component level     - only this component and its children will have the same instance of the service 
+
+
+
+                    AppComponent                        Directives          Services      
+                        |
+   ------------------------------------
+   A        B           C           D                       
+   |
+ ---------
+ a1     a2    

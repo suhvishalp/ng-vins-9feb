@@ -22,12 +22,17 @@ export class MovieService{
                     // )
     }
 
+    
+
     public saveMovie(movie){
-        
-        return this.http.post<Movie>(this.moviesUrl, movie)
-                    // .pipe(
-                    //     catchError(this.handleError)
-                    // )
+
+        const {title, numberInStock, dailyRentalRate, genreId} = movie;
+
+        if(movie._id === "-1"){
+            return this.http.post<Movie>(this.moviesUrl, {title, numberInStock, dailyRentalRate, genreId})
+        }else{
+            return this.http.put<Movie>(this.moviesUrl+'/'+movie._id, {title, numberInStock, dailyRentalRate, genreId} )
+        }
     }
 
     public getMovie(id){

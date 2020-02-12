@@ -14,13 +14,14 @@ import { MovieFormComponent } from './movie-form/movie-form.component'
 import { MyHandler } from './services/myglobalerrorhanlder';
 import { MyInterceptor } from './services/httpInterceptor';
 import { LogoutComponent } from './logout/logout.component';
+import { MovieGuard } from './services/movie-guard.service';
 
 const appRoutes:Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component:LoginComponent},
   {path: 'register', component:RegisterComponent},
-  {path:'movies', component:MoviesComponent},
-  {path:'movies/:id', component: MovieFormComponent},
+  {path:'movies', component:MoviesComponent, canActivate:[MovieGuard]},
+  {path:'movies/:id', component: MovieFormComponent,  canActivate:[MovieGuard]},
   {path:'logout', component: LogoutComponent}
 ]
 

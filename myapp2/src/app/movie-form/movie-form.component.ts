@@ -93,16 +93,16 @@ export class MovieFormComponent implements OnInit {
     this.movie.genreId = this.movieForm.value.genreId
 
     console.log(this.movie)
-    // this.movieService.saveMovie(this.movieForm.value)
-    //   .subscribe(
-    //     (response) => {
-    //       console.log('movie created....')
-    //       this.router.navigate(['/movies'])
-    //     },
-    //     (errorMessage: string) => {
-    //       alert(errorMessage)
-    //     }
-    //   )
+    this.movieService.saveMovie(this.movie)
+      .subscribe(
+        (response) => {
+          console.log('movie created....')
+          this.router.navigate(['/movies'])
+        },
+        (errorMessage: string) => {
+          alert(errorMessage)
+        }
+      )
   }
 
 }
