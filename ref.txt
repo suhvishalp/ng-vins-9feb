@@ -1,3 +1,10 @@
+ https://feedback.vinsys.com/Infeedback.html?batch_id%3D172
+
+ Vishal Shah
+ M. 9850810100
+ Email: suhvishal@gmail.com
+
+
 9FEB - Day1
 ----------------------
 
@@ -566,3 +573,50 @@ Dependency Injection
 
     Testing basics
     -----------------------
+        - jasmine framework 
+                - we can write test cases using jasmine 
+                - create xxxx.spec.ts file & define test suite 
+
+                        describe()          // define test suite 
+                        it()                //define a test 
+
+                        describe('description of test suite', ()={
+
+                            //here you can write test case/s 
+                            it('description of test', ()=>{
+                                //logic to test something 
+
+                                //assertion methods 
+                                expect(xxxx).toBe(1)
+                            })
+                        })
+
+
+        - Karma 
+                - we can run test cases 
+
+
+
+
+
+
+take away
+-----------------
+    - getting started with angular 
+    - angular essentials 
+
+
+Action items
+-----------------
+    - start doing hands-on as per ngbook
+    - deep dive into typescript (typescript basics)
+    - Json Watmore's blog examples
+    - angular.io 
+
+
+
+
+
+
+
+
