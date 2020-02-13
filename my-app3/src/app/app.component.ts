@@ -8,6 +8,8 @@ import { map } from 'rxjs-compat/operator/map';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  title:string= 'my-app3'
   
   constructor(){
     // const myObservable = new Observable((observer:Observer<string>)=>{
