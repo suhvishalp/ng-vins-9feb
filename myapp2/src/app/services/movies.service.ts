@@ -2,7 +2,7 @@ import { Injectable, ErrorHandler } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHandler } from '@angular/common/http';
 import {environment} from '../../environments/environment'
 import { Movie } from '../models/movie.mode';
-import {catchError} from 'rxjs/operators';
+import {catchError, retry, map} from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 @Injectable({
@@ -17,9 +17,8 @@ export class MovieService{
 
     public getAllMovies(){
       return  this.http.get<Movie[]>(this.moviesUrl)
-                    // .pipe(
-                    //     catchError(this.handleError)
-                    // )
+                    
+                  
     }
 
     

@@ -541,3 +541,28 @@ Dependency Injection
    |
  ---------
  a1     a2    
+
+
+
+ Expected Errors
+    = show appropriate message 
+
+    - 400 - bad request 
+    - 401 - unauthorized 
+    - 403 - 
+    - 400 to 499
+
+ Unexpected Errors
+        - show a generic message and log the error using some logger system 
+    - server is down
+    - db is down 
+    - network down 
+    - bug in backed 
+
+
+    Observable
+    --------------------
+
+
+    Testing basics
+    -----------------------
